@@ -1,17 +1,36 @@
-@extends('partials.head')
-      
-@extends('partials.header')
+<!doctype html>
+<html lang="en">
 
-@extends('partials.nav')
+  @include('partials.head')
 
-@extends('partials.post-featured')
+<body>
+<div class="container">
+  @include('partials.header')
 
-@extends('partials.post-highlights')
+  @include('partials.nav')
 
-@extends('partials.posts')
+  @include('partials.post-featured')
 
-@extends('partials.pagination')
+  @include('partials.post-highlights')
+</div>
 
-@extends('partials.sidebar')
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+          <h3 class="pb-3 mb-4 font-italic border-bottom">
+            From the Firehose
+          </h3>
 
-@extends('partials.footer')
+@include('partials.posts')
+
+@include('partials.pagination')
+
+</div><!-- /.blog-main -->
+
+@include('partials.sidebar')
+
+</div><!-- /.row -->
+
+</main><!-- /.container -->
+
+@include('partials.footer')

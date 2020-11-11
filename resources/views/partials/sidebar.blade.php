@@ -1,11 +1,7 @@
 <aside class="col-md-4 blog-sidebar">
-    @extends('partials.side-about')
+    @include('partials.side-about')
 
-    @extends('partials.side-archives')
+    @include('partials.side-archives')
 
-    @extends('partials.side-elsewhere')
+    @include('partials.side-elsewhere')
 </aside><!-- /.blog-sidebar -->
-
-</div><!-- /.row -->
-
-</main><!-- /.container -->
