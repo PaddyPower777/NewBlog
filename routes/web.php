@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/','welcome');
+
+Route::get('authors', 'AuthorController@getAllAuthors')->name('get-all-authors');
