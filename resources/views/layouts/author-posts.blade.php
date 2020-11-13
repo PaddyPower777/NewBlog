@@ -14,16 +14,14 @@
     <div class="row">
         <div class="col-md-8 blog-main">
           <h3 class="pb-3 mb-4 font-italic border-bottom">
-            Our Many Majestic Authors
+            {{$author_name_slug}}
           </h3>
 
-@foreach($users as $user)
+@foreach($posts as $post)
 
-  @include('partials.authors')
+  @include('partials.author-posts')
 
 @endforeach
-
-{{$users->links()}}
 
 
 </div><!-- /.blog-main -->

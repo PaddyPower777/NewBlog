@@ -13,4 +13,8 @@ class Post extends Model
     public function comments() {
         return $this->hasMany(Comment::class);
     }
+
+    public function getCreatedAtAttribute($string) {
+        return date('jS F Y \a\t g:i a',strtotime($string));
+    }
 }

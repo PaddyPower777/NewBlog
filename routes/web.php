@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::view('/','pages.welcome');
 
 Route::get('authors', 'AuthorController@getAllAuthors')->name('get-all-authors');
+Route::get('authors/{author_name_slug}/{author_id}', 'PostController@getAuthorPosts')->name('get-author-posts');
+
+Route::fallback(function() {
+    echo 'Oops 404!';
+});
