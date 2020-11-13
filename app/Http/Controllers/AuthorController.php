@@ -9,9 +9,6 @@ class AuthorController extends Controller
 {
     public function getAllAuthors(){
         $users = User::has('posts')->with('posts')->first();
-        echo $users->name;
-        foreach($users->posts as $post) {
-            echo $post->post_slug . '<br />';
-        };
+        return view('pages.authors', compact('users'));
     }
 }

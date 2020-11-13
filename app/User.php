@@ -46,4 +46,8 @@ class User extends Authenticatable
     public function comments() {
         return $this->hasMany(Comment::class);
     }
+
+    public function getFullName(User $user) {
+        return $user->first_name . ' ' . $user->last_name;
+    }
 }
