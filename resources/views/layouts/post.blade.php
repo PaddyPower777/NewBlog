@@ -8,24 +8,21 @@
   @include('partials.header')
 
   @include('partials.nav')
-  
-@foreach($post as $post)
-  @include('partials.post-featured')
-  @endforeach
-
-  @include('partials.post-highlights')
 </div>
 
 <main role="main" class="container">
     <div class="row">
         <div class="col-md-8 blog-main">
           <h3 class="pb-3 mb-4 font-italic border-bottom">
-            From the Firehose
+            {{$post[0]->post_heading}}
           </h3>
 
-@include('partials.posts')
+@foreach($post as $post)
 
-@include('partials.pagination')
+  @include('partials.post')
+
+@endforeach
+
 
 </div><!-- /.blog-main -->
 
