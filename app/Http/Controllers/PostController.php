@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
+use App\Comment;
 
 class PostController extends Controller
 {
@@ -15,11 +16,13 @@ class PostController extends Controller
 
     public function getAuthorPosts($author_name_slug, $author_id) {
         $posts = Post::select('*')->where('user_id', $author_id)->orderBy('id','desc')->get();
-        return view('pages.author-posts', compact('posts', 'author_name_slug'));
+        $author = User::select('*')->where('id', $author_id)->get();
+        return view('pages.author-posts', compact('posts', 'author'));
     }
 
     public function getPost($post_slug, $post_id) {
         $post = Post::select('*')->where('id', $post_id)->orderBy('id','desc')->get();
-        return view('pages.post', compact('post'));
+        $comments = Comment::select('*')->where('post_id', $post_id)->orderBy('id','desc')->get();
+        return view('pages.post', compact('post', 'comments'));
     }
 }

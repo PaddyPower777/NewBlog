@@ -13,9 +13,9 @@
 <main role="main" class="container">
     <div class="row">
         <div class="col-md-8 blog-main">
-          <h3 class="pb-3 mb-4 font-italic border-bottom">
-            {{$author_name_slug}}
-          </h3>
+          <h2 class="blog-post-title border-bottom">
+            {{$author[0]->getFullName($author[0])}}
+          </h2>
 
 @foreach($posts as $post)
 

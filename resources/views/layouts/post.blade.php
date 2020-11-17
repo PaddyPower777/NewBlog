@@ -13,16 +13,9 @@
 <main role="main" class="container">
     <div class="row">
         <div class="col-md-8 blog-main">
-          <h3 class="pb-3 mb-4 font-italic border-bottom">
-            {{$post[0]->post_heading}}
-          </h3>
+    <h2 class="blog-post-title">{{ $post[0]->post_heading }}</h2>
 
-@foreach($post as $post)
-
-  @include('partials.post')
-
-@endforeach
-
+@include('partials.post')
 
 </div><!-- /.blog-main -->
 

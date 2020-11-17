@@ -13,4 +13,8 @@ class Comment extends Model
     function post() {
         return $this->belongsTo(Post::class);
     }
+
+    public function getCreatedAtAttribute($string) {
+        return date('jS F Y \a\t g:i a',strtotime($string));
+    }
 }
